@@ -1,0 +1,108 @@
+=== cypress.config.js ===
+
+import { defineConfig } from 'cypress'
+
+export default defineConfig({
+  e2e: {
+    specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
+    baseUrl: 'http://localhost:4173'
+  },
+  component: {
+    specPattern: 'src/**/__tests__/*.{cy,spec}.{js,ts,jsx,tsx}',
+    devServer: {
+      framework: 'vue',
+      bundler: 'vite'
+    }
+  }
+})
+
+
+=== env.d.js ===
+
+/// <reference types="vite/client" />
+
+
+=== index.html ===
+
+<!doctype html>
+<html class="text-[17px] lg:text-[18px] xl:text-[20px]" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="src/assets/icons/vento-favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vento Kvintet</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+
+=== postcss.config.js ===
+
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+
+=== tailwind.config.js ===
+
+// tailwind.config.js
+module.exports = {
+  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    fontFamily: {
+      sans: ['satoshi', 'system-ui'],
+      serif: ['ui-serif', 'Georgia'],
+      mono: ['ui-monospace', 'SFMono-Regular']
+    },
+    fontSize: {
+      sm: ['0.9rem', { lineHeight: '1.389' }],
+      base: ['1rem', { lineHeight: '1.6' }],
+      lg: ['1.2rem', { lineHeight: '1.4' }],
+      xl: ['1.4rem', { lineHeight: '1.393' }],
+      '2xl': ['1.5rem', { lineHeight: '1.4' }],
+      '3xl': ['2rem', { lineHeight: '1.4' }],
+      '4xl': ['2.2rem', { lineHeight: '1.34' }],
+      '5xl': ['3.7rem', { lineHeight: '1.243', letterSpacing: '-0.01em' }]
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: '#ffffff',
+      black: '#000000',
+      darkgrey: '#161616',
+      lightgrey: '#EFF3F5'
+    },
+    extend: {}
+  },
+  variants: {
+    extend: {}
+  },
+  plugins: []
+}
+
+
+=== vite.config.js ===
+
+import { fileURLToPath, URL } from 'node:url'
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
+})

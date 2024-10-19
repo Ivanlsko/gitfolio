@@ -1,0 +1,15 @@
+{
+  "languagesUsed": ["JavaScript", "HTML", "CSS", "Vue", "TypeScript"],
+  "shortDescription": "This project is a comprehensive web application for the 'Vento Kvintet', a professional music ensemble. It features an interactive, responsive UI built with Vue and integrates an email service via a Node.js backend.",
+  "longDescription": "The 'Vento Kvintet' web application is designed to provide information and facilitate contact with a professional music quintet. Utilizing modern web technologies, including Vue.js for the frontend and Node.js for backend email functionalities, the application showcases a range of features including dynamic routing, component-based design, and custom Cypress testing for quality assurance. This project highlights best practices in state management and frontend/backend interactions, offering a seamless user experience.",
+  "keyFeatures": [
+    "Responsive design optimized for various devices",
+    "Vue.js for dynamic, component-based UI",
+    "Node.js backend with Nodemailer for sending emails",
+    "Cypress for automated end-to-end testing",
+    "Integration of Tailwind CSS for easy styling and layout management"
+  ],
+  "frameworks": ["Vue", "Node.js", "Cypress", "Tailwind CSS"],
+  "contributions": "Developed the entire frontend using Vue with a focus on component reusability and streamlined user interactions. Integrated backend functionality for email handling using Node.js and Nodemailer, ensuring a smooth communication process. Implemented automated tests using Cypress to maintain code quality and ensure application reliability.",
+  "lastUpdated": "2023-10-01"
+}
